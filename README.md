@@ -46,7 +46,7 @@ repo is recognizing which restriction your data already satisfies for free.
 ## Build and run
 
 ```bash
-git clone https://github.com/mtrebi/memory-allocators.git
+git clone https://github.com/abhiraj-ranjan/memory-allocators.git
 cmake -S memory-allocators -B build
 cmake --build build
 ./build/main
