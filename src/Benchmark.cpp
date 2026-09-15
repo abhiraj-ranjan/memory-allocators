@@ -1,7 +1,7 @@
 
 #include "Benchmark.h"
 #include <iostream>
-#include <stdlib.h>     /* srand, rand */
+#include <stdlib.h>     
 #include <cassert>
 
 void Benchmark::SingleAllocation(Allocator* allocator, const std::size_t size, const std::size_t alignment) {
@@ -32,8 +32,8 @@ void Benchmark::SingleFree(Allocator* allocator, const std::size_t size, const s
     std::cout << "\tSize:     \t" << size << IO::endl;
     std::cout << "\tAlignment\t" << alignment << IO::endl;
 
-    // BUG: (https://github.com/mtrebi/memory-allocators/issues/6)
-    // void* addresses[m_nOperations];
+
+
     void* addresses[OPERATIONS];
 
     StartRound();
@@ -76,7 +76,7 @@ void Benchmark::MultipleFree(Allocator* allocator, const std::vector<std::size_t
 
 void Benchmark::RandomAllocation(Allocator* allocator, const std::vector<std::size_t>& allocationSizes, const std::vector<std::size_t>& alignments) {
     
-    // NOTE: Is this actually initializing the RNG? Jose Fernando Lopez Fernandez 11/07/2018 @ 12:54am (UTC)
+
     srand(1);
 
     std::cout << "\tBENCHMARK: ALLOCATION" << IO::endl;
@@ -105,7 +105,7 @@ void Benchmark::RandomAllocation(Allocator* allocator, const std::vector<std::si
 
 void Benchmark::RandomFree(Allocator* allocator, const std::vector<std::size_t>& allocationSizes, const std::vector<std::size_t>& alignments) {
     
-    // NOTE: Is this actually initializing the RNG? Jose Fernando Lopez Fernandez 11/07/2018 @ 1:51am (UTC)
+
     srand(1);
 
     std::cout << "\tBENCHMARK: ALLOCATION/FREE" << IO::endl;
